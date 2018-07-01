@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="utf-8">
+
+<head>
+    <script src="https://cdn.rawgit.com/konvajs/konva/1.6.3/konva.min.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <title>Socket.IO whiteboard</title>
+    <script src="chat.js"></script>
+    <link rel="stylesheet" href="button.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style1.css">
+</head>
+
+<body>
+    <div class="bgc"></div>
+    <div class="container">
+        <div id="header">
+            <img src="/images/banner.jpg" style="width:100%" />
+        </div>
+        <div id="navbar">
+            <nav class="navbar navbar-inverse ">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> 
+                </button>
+                        <div class="collapse navbar-collapse" id="myNavbar">
+                            <ul class="nav navbar-nav">
+                                <li>
+                                    <a href="http://120.105.129.49:8080/#/main" class="dropdown-toggle">首頁</a>
+                                </li>
+                                <li>
+                                    <a href="http://120.105.129.49:8080/#/My_profile" class="dropdown-toggle">個人資訊</a>
+                                </li>
+                                <li class="dropdown ">
+                                    <a to="" class="dropdown-toggle" data-toggle="dropdown">我的筆記
+                                    <span class="caret"></span>
+                                </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="http://120.105.129.49:8080/#/My_note">管理筆記</a>
+                                        </li>
+                                        <li>
+                                            <a href="http://120.105.129.49:8080/#/Note_new">新增筆記</a>
+                                        </li>
+                                        <li>
+                                            <a href="http://120.105.129.49:8080/#/Note_upload">上傳筆記</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="http://120.105.129.49:8080/#/Ask" class="dropdown-toggle">我要發問</a>
+                                </li>
+                                <li>
+                                    <a href="http://120.105.129.49:8080/#/Answer" class="dropdown-toggle">我要回答</a>
+                                </li>
+                                <li>
+                                    <a to="#" class="dropdown-toggle">英文話劇</a>
+                                </li>
+                                <li>
+                                    <a href="http://120.105.129.49:8080/#/Mission"  class="dropdown-toggle">任務</a>
+                                </li>
+                                <li>
+                                    <a href="http://120.105.129.49:8080/#/Example" class="dropdown-toggle">題庫</a>
+                                </li>
+                                <li>
+                                    <a href="http://120.105.129.49:8080/#/Game" class="dropdown-toggle">競賽</a>
+                                </li>
+                                <li>
+                                    <a href="http://120.105.129.49:8080/#/Game1"  class="dropdown-toggle">競賽訊息</a>
+                                </li>
+                                <li>
+                                    <a href="http://120.105.129.49:8080/#/Game2"  class="dropdown-toggle">競賽大廳</a>
+                                </li>
+                                <li>
+                                    <a  href="http://120.105.129.49:8080/#/Testpicture" class="dropdown-toggle">幫助</a>
+                                </li>
+                                <li>
+                                    <a to="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class='dram' style="z-index=relative">
+        <canvas class="whiteboard" id="whiteboard"></canvas>
+        <canvas class="whiteboard" id="whiteboard2"></canvas>
+        <canvas class="whiteboard" id="whiteboard3"></canvas>
+        <div class="colors">
+            <div class="btn-group dropdown colors">
+                <button type="button" class="btn btn-default dropdown-toggle cir" id="btn" data-toggle="dropdown">圖示
+    </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li>
+                        <a><img src="images/color.svg" style="width:20px;height:20px">顏色</a>
+                        <div class="drop-tab">
+                            <ul class="col" id="col">
+                                <li> <img src="images/block.png" style="width:20px;height:20px">black</li>
+                                <li> <img src="images/white.png" style="width:20px;height:20px">white</li>
+                                <li> <img src="images/red.png" style="width:20px;height:20px">red</li>
+                                <li> <img src="images/blue.png" style="width:20px;height:20px">blue</li>
+                                <li> <img src="images/green.png" style="width:20px;height:20px">green</li>
+                                <li> <img src="images/yellow.png" style="width:20px;height:20px">yellow</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a><img src="images/ip.png" style="width:20px;height:20px">圖形</a>
+                        <div class="drop-tab">
+                            <ul class="grade">
+                                <li onclick="grrrr(2)"><img src="images/circle.png" style="width:20px;height:20px"></li>
+                                <li onclick="grrrr(3)"><img src="images/air_circle.svg" style="width:20px;height:20px"></li>
+                                <li onclick="grrrr(4)"><img src="images/block.png" style="width:20px;height:20px"></li>
+                                <li onclick="grrrr(5)"><img src="images/rel.png" style="width:20px;height:20px"></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a><img src="images/ic-edit-name.svg" style="width:20px;height:20px">畫筆</a>
+                        <div class="drop-tab">
+                            <ul>
+                                <li onclick="drawllll(2)"><img src="images/pen_r.png" style="width:20px;height:20px"></li>
+                                <li onclick="drawllll(3)"><img src="images/pen.png" style="width:20px;height:20px"></li>
+                                <li onclick="drawllll(4)"><img src="images/ear.png" style="width:20px;height:20px"></li>
+                                <li onclick="drawllll(5)"><img src="images/line.png" style="width:20px;height:20px"></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a><img src="images/weight.png" style="width:20px;height:20px">筆寬</a>
+                        <div class="drop-tab">
+                            <ul>
+                                <li onclick="linewidth(12)"><img src="images/circle.png" style="width:10px;height:10px">細</li>
+                                <li onclick="linewidth(15)"><img src="images/circle.png" style="width:15px;height:15px">中</li>
+                                <li onclick="linewidth(20)"><img src="images/circle.png" style="width:20px;height:20px">粗</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <!--
+                    <li onclick="move()">
+                        <a><img src="images/ic-pan-tool.svg" style="width:20px;height:20px">移動圖片</a>
+                    </li>
+-->
+                    <li onclick="cle()">
+                        <a><img src="images/ict-text-delete.svg" style="width:20px;height:20px">清空</a>
+                    </li>
+                    <li onclick="text()">
+                        <a><img src="images/ict-text.svg" style="width:20px;height:20px">文字</a>
+                    </li>
+                    <li onclick="cas()">
+                        <a><img src="images/icons8-%E5%B1%82-24.png" style="width:20px;height:20px">切換圖層</a>
+                    </li>
+                    <li>
+                        <a><img src="images/upload-image.svg" style="width:20px;height:20px" id = "uploadImage">上傳圖片</a>
+                    </li>
+                </ul>
+            </div>
+            <div ondblclick="document.designMode='on';" class="source" id="source" style=" width: auto ;height: auto; 
+			border:1px solid black;			/*0px為無框*/	" draggable="true">輸入文字</div>
+
+
+        </div>
+        <div><canvas class="pic" id="canvas"></canvas></div>
+        <div><canvas class="pic1" id="canvas1"></canvas></div>
+        <div><canvas class="pic2" id="canvas2"></canvas></div>
+        <!--        <div id="as"></div>-->
+    </div>
+    <div id="container" style="float:right;">
+        <div id="status-box">Server: <span id="status">-</span> / <span id="online">0</span> online.</div>
+        <div id="content">
+        </div>
+        <div id="send-box">
+            <form id="send-form">
+                <input type="text" name="name" id="name" placeholder="暱稱">
+                <input type="text" name="msg" id="msg" placeholder="說點什麼？">
+                <input type="submit" value="送出">
+            </form>
+        </div>
+    </div>
+
+    <script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js"></script>
+    <script src="main.js"></script>
+    <script src="button.js"></script>
+    <script src="/javascripts/bootstrap.js"></script>
+    <link rel="stylesheet" href="chat.css">
+</body>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+        var status = document.getElementById("status");
+        var online = document.getElementById("online");
+
+        socket.on("connect", function() {
+            status.innerText = "Connected.";
+        });
+
+        socket.on("disconnect", function() {
+            status.innerText = "Disconnected.";
+        });
+
+        socket.on("online", function(amount) {
+            online.innerText = amount;
+        });
+    });
+
+</script>
+
+</html>

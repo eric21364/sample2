@@ -1,0 +1,128 @@
+/**
+* Fix user-agent
+*/
+
+    {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+canvas{
+    border: 2px solid #000;
+    left: 5px,
+}
+
+
+/**
+* Canvas
+*/
+
+.whiteboard {
+    height: 80%;
+    width:  80%;
+    position: absolute;
+    z-index: 10;
+    bottom: 0;
+}
+
+.pic {
+    height: 80%;
+    width: 80%;
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+}
+
+.pic1 {
+    height: 80%;
+    width: 80%;
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+}
+
+.pic2 {
+    height: 80%;
+    width: 80%;
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+}
+
+.colors {
+    position: fixed;
+    z-index: 1000;
+}
+
+.as {
+    height: .whiteboard.hight;
+    width: 80%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.source {
+    height: 80%;
+    width: 80%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -2;
+}
+
+.color {
+    display: inline-block;
+}
+
+.select-style {
+    background: black;
+    color: black;
+    border-radius: 20px;
+    box-shadow: 1px 1px 2px #888888;
+}
+
+.style-le {
+    font-size: 2px;
+}
+
+.color.black {
+    background-color: black;
+}
+
+.color.red {
+    background-color: red;
+}
+
+.color.green {
+    background-color: green;
+}
+
+.color.blue {
+    background-color: blue;
+}
+
+.color.yellow {
+    background-color: yellow;
+}
+
+.color.white {
+    background-color: white;
+}
+
+
+/*body {
+background-color: ivory;
+padding:10px;
+}
+#my_canvas {
+border:1px solid red;
+}*/

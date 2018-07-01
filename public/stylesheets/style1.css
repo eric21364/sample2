@@ -1,0 +1,106 @@
+body { margin: 0px; font-family: Verdana; font-size:13px; color:#444; line-height:18px; }
+
+/* 最外層包裝 */
+#body_set { width:1024px; margin:0 auto; }
+
+/* 表頭 */
+#header { margin-bottom:1px; }
+
+/* 內容區 */
+#body_page { background:#eee4d7; min-height:450px;}
+
+/* login 專用 */
+#login_left { width:600px; float:left; min-height:450px; }
+#login_right { width:300px; float:right; background:#fff; margin:1px 1px 1px 0; padding:15px 20px 20px; min-height:450px; }
+#left { width:350px; float:left; background:#fff; margin:1px 1px 1px 0; padding:10px 20px 20px; min-height:250px; border-radius: 12px;}
+
+.txt_center { text-align:center; margin-top:10px; }
+.txt_right { text-align:right; margin-top:10px; }
+
+.block_line { border:1px solid #ddcebd; font-family:微軟正黑體,Arial,Courier New;font-size:16px; }
+.input_data { height:30px;  vertical-align:top;}
+
+p.errorMessage{	background: #EFCBC2; color: #D71517; border-left: 5px solid #DA1527; padding: 9px; margin: 22px 0;}
+p.successMessage{ background: #D8EFC2; color: #097133; border-left: 5px solid #097133; padding: 9px; margin: 22px 0;}
+
+.navbar-color {
+    background-color: #f2d4bf;
+    border-color: #E7E7E7;
+}
+
+/* 年級板塊 垂直 menu for main.html */
+@media (min-width: 768px) {  .sidebar-nav .navbar .navbar-collapse { padding: 0; max-height: none;  }
+  .sidebar-nav .navbar ul {  float: none;  display: block;  }
+  .sidebar-nav .navbar li {  float: none;  display: block;  }
+  .sidebar-nav .navbar .active li { color:#695041;  }
+  .sidebar-nav .navbar li a {  padding-top: 12px;  padding-bottom: 12px; }
+  .sidebar-nav .navbar li a:hover {  background:#faefde;}
+}
+
+.nav_active {  padding-top: 12px;  padding-bottom: 12px;  color:#695041; }
+
+
+#div1{
+display: inline-block;/*讓div並排*/
+vertical-align: top;/*就算個個div行數不同，也一律向上對齊*/
+margin-top:10px;
+margin-left:10px;
+padding:20px;
+border:0;
+}
+
+
+/* ======================================================================================= */
+
+
+/* 表單按鈕 */
+.f_btn { padding:0 10px; background:url() repeat-x; border:1px solid #bcbcbc; border-radius:2px; -moz-border-radius:2px; color:#555; cursor:pointer; padding-top:3px \9; *padding-top:2px; vertical-align:middle; height:20px; padding-bottom:2px; }
+.f_btn:hover { border:1px solid #666; }
+.input_s { width:40px; height:13px; font-size:12px; vertical-align:middle; }
+.input_b { width:200px; height:13px; font-size:12px; vertical-align:middle; }
+
+
+#select_date { border:1px solid #ddcebd; width:500px; }
+#rooms { height:31px; text-align:center; font-size:11px; border-collapse: collapse; border:1px solid #ffffff; color:#C65900; -webkit-text-size-adjust:none; }
+#rooms td { line-height:14px; border-color:#c8b49d; padding:3px 0; padding-top:6px \9; }
+#rooms p { font-size:12px; margin:0; color:#695041; }
+#date { background:#fffaf3; border:1px solid #ffffff; text-align:center; border-collapse:collapse; font-size:12px; }
+#date td { border-color:#DDCEBD; height:26px; }
+#date tr:hover { background:#faefde; }
+#date p { font-size:9px; margin:1px 0; line-height:3px; line-height:6px \9; -webkit-text-size-adjust:none; }
+#date select { font-size:12px; border:1px solid #ccc; }
+#date .date_bg { background:#faefde; font-size:10px; padding:6px 0 2px; color:#666; -webkit-text-size-adjust:none; }
+#date a { text-decoration:none; color:#7d4f34; }
+#date a:hover { text-decoration:underline; }
+#date b { color:#C65900; font-weight:normal; }
+#date .ttl { color:#990041;font-family:微軟正黑體,Arial,Courier New;font-size:16px;  }
+#date .tab { text-align:left; padding:0 10px; }
+#date img { border:none; }
+
+/* 按鈕區 */
+.btn_a { text-align:center; margin-top:10px; }
+
+/* 表單頁面 */
+#form { line-height:24px \9; }
+#form .tab_left { background:url() no-repeat; padding:5px 0 5px 15px; height:35px; border-bottom:1px solid #efe8e0; height:20px \9; height:20px; }
+#form .tab_right { background:url() no-repeat; padding:5px 0 5px 20px; height:35px; border-bottom:1px solid #efe8e0; height:20px \9; height:20px; }
+#form .tab_left b { font-size:11px; color:#eb6a00; font-weight:normal; margin-left:2px; }
+#form span { color:#7D4F34; font-size:12px; }
+#form input, textarea, select { border:1px solid #ccc; vertical-align:middle; font-family:Verdana; font-size:13px; color:#444; }
+#form .bdr input, #form .bdr_n { border:none; }
+#form .tab_1 { border-bottom:none; height:15px; padding-bottom:0 \9; }
+#form .tab_2 { background:none; height:15px; }
+#form .tab_3 { padding-left:15px; background:url() left center no-repeat; }
+#form .img_1 { vertical-align:middle; border:1px solid #ccc; margin-right:10px; width:100px; height:20px; }
+#form .img_2 { vertical-align:middle; border:1px solid #ccc; margin-left:10px; width:50px; height:40px; }
+.serv textarea { background:#fffdf9; }
+.serv .tab_4 { padding:10px 0; }
+#form .f_btn { color:#555; }
+#form .f_btn:hover { border:1px solid #666; }
+#form .login_p { padding-left:0; }
+
+/* 清除浮動 */
+.clear { clear:both; }
+
+/* 頁尾 */
+#footer { clear:both; margin:0 auto; }

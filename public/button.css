@@ -1,0 +1,38 @@
+.cir {
+
+    width: 50px;
+    height: 50px;
+    line-height: 30px;
+    border: 1px solid green;
+    border-radius: 30px;
+    box-shadow: 0 9px #999;
+    background-color:#00CCff;
+}
+
+.dropdown-menu li {
+    position: relative;
+}
+
+.dropdown-menu li .drop-tab {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 159px;
+    background-color: #fff;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+.dropdown-menu li:hover .drop-tab {
+    display: block;
+}
+
+.drop-tab ul {
+    display: flex;
+    padding: 0;
+}
+
+.drop-tab ul li {
+    list-style: none;
+    padding: 5px 10px;
+}
