@@ -8,10 +8,10 @@ var jwt = require('jsonwebtoken');
 //var db = new mysql();
 var mysql = require('mysql');
 var connection = mysql.createConnection({
-    host: '120.105.129.49',
-    user: 'eric21364',
-    password: 'eric21364',
-    database: 'test'
+    host: '',
+    user: '',
+    password: '',
+    database: ''
 });
 
 app.use(express.static(__dirname + '/public'));
